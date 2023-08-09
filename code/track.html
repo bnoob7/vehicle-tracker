@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tracker</title>
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+    />
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+
+    <!-- <link rel="stylesheet" href="./track.css" /> -->
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      h1 {
+        text-align: center;
+        background-color: rgba(39, 203, 39, 0.5);
+        padding: 2rem;
+        color: white;
+        font-family: mokoto;
+      }
+      body {
+        position: relative;
+      }
+      #binod {
+        height: 90vh;
+        width: 80vw;
+        position: absolute;
+        right: 0;
+      }
+      .vehicles {
+        width: 20vw;
+        height: 90vh;
+        background-color: silver;
+      }
+      .map-wrapper {
+        display: flex;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>Track Your Vehicle</h1>
+    </header>
+
+    <main class="map-wrapper">
+      <div class="vehicles"></div>
+      <div id="binod"></div>
+    </main>
+
+    <!-- <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script> -->
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        // setview(latitude, longitude, zoom level)
+
+        const binodMap = L.map("binod").setView([27.68725, 85.26471], 15);
+
+        // s= subdomain,   z =  zoom level,  x = x coordinate, y = y coordinate.
+        const tileUrl = "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png";
+
+        const attribution =
+          '&copy; <a href="https://www.openstreepmap.org/copyright">OpenStreetMap</a>contributors';
+
+        // tilelayer = initial laer i.e. openstreet ko map
+        const tiles = L.tileLayer(tileUrl, { attribution });
+
+        tiles.addTo(binodMap);
+
+
+        const mobilePhones = [
+          { id: 1, latitude: 27.68725, longitude: 85.26471 },
+          { id: 2, latitude: 28.6139, longitude: 77.2090 },
+          { id: 3, latitude: 51.5074, longitude: -0.1278 },
+          { id: 4, latitude: 40.7128, longitude: -74.0060 }
+        ];
+
+        mobilePhones.forEach(phone => {
+          const marker = L.marker([phone.latitude, phone.longitude]).addTo(map);
+          marker.bindPopup(`Mobile Phone ${phone.id}`).openPopup();
+        });
+
+      });
+
+      // document.addEventListener("DOMContentLoaded", function () {
+      //   const mobilePhones = [
+      //     { id: 1, latitude: 27.68725, longitude: 85.26471 },
+      //     { id: 2, latitude: 28.6139, longitude: 77.2090 },
+      //     { id: 3, latitude: 51.5074, longitude: -0.1278 },
+      //     { id: 4, latitude: 40.7128, longitude: -74.0060 }
+      //   ];
+
+
+      // });
+    </script>
+  </body>
+</html>

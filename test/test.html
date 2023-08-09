@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Courier+Prime:ital,wght@0,400;0,700;1,400;1,700&family=Josefin+Sans:wght@100;300;400;500;600;&family=Montserrat+Alternates:wght@100;400;700&family=Montserrat:wght@100;300;400;500;600&family=Quicksand:wght@300;400;500;600;700&family=Raleway:ital,wght@0,700;0,900;1,100;1,500&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      .parent {
+        padding: 100px;
+        width: 100vw;
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+      }
+      .wrapper {
+        width: 250px;
+        height: 450px;
+        border: 1px solid rgb(176, 23, 23);
+        border-radius: 1.5rem;
+        box-sizing: border-box;
+        overflow: hidden;
+        box-shadow: 2px 3px 3px 2px rgba(0, 0, 0,0.4);
+      }
+      .images {
+        position: relative;
+        background-image: url("https://images.unsplash.com/photo-1618500299034-abce7ed0e8df?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80%22%20alt=%22picture%20of%20cat%20wearing%20space%20suit");
+        background-size: cover;
+        background-repeat: no-repeat;
+        border-radius: 1.2rem 1.2rem 0.25rem 0.25rem;
+        height: 150px;
+        width: 100%;
+      }
+      .icon {
+        position: absolute;
+        color: rgb(67, 57, 37);
+        font-size: 14px;
+      }
+      .icon1,
+      .icon2,
+      .icon3 {
+        top: 15px;
+      }
+      .icon4,
+      .icon5,
+      .icon6 {
+        bottom: 15px;
+      }
+      .icon1,
+      .icon4 {
+        left: 10px;
+      }
+      .images p {
+        font-family: quicksand;
+        font-size: 10px;
+      }
+      .icon5::after {
+        content: "27";
+        font-size: 10px;
+        padding-left: 4px;
+      }
+      .icon6::after {
+        content: "916";
+        font-size: 10px;
+        padding-left: 4px;
+      }
+
+      .icon3,
+      .icon6 {
+        right: 10px;
+      }
+      .icon2 {
+        right: 35px;
+      }
+      .icon5 {
+        right: 50px;
+      }
+      .content {
+        display: inline;
+        box-sizing: border-box;
+        padding: 15px;
+        margin-top: 5px;
+        font-family: Josefin Sans;
+        display: inline-block;
+        width: 100%;
+        overflow: scroll;
+      }
+      .content h2 {
+        font-family: quicksand;
+        font-size: 18px;
+        font-weight: 700;
+      }
+      .content h2::before {
+        content: "";
+        display: inline;
+        border-right: 8px solid red;
+      }
+      .content p {
+        margin-top: 8px;
+        font-size: 12px;
+        font-family: quicksand;
+        line-height: calc((1 / 2) * 12px+ 12px);
+        color: rgb(58, 58, 58);
+      }
+      .stanza1::before {
+        content: "Hello Meow!";
+        color: red;
+      }
+      .stanza1::after {
+        content: "Bye Meow!";
+        color: rgb(159, 30, 30);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="parent">
+      <div class="wrapper">
+        <div class="images">
+          <i class="fa fa-regular fa-chevron-left icon-back icon icon1"></i>
+          <i class="fa fa-regular fa-share icon icon2"></i>
+          <i class="fa fa-bookmark icon icon3"></i>
+          <p class="icon icon4">2 hours ago</p>
+          <i class="fa fa-comment icon icon5"></i>
+          <i class="fa fa-eye icon icon6"></i>
+        </div>
+
+        <div class="content">
+          <h2>Cat as an Astronaut wearing Space Suit</h2>
+          <p class="stanza1">
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Veritatis
+            soluta dolores quos expedita deserunt tenetur rem sed voluptas
+            corrupti. Tempora, quas commodi ad saepe nam assumenda sint expedita
+            tenetur possimus. magnam quaerat dolores
+          </p>
+          <p class="stanza2">
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quasi
+            suscipit aliquid, ullam explicabo corrupti autem reprehenderit
+            voluptate nulla facere amet officiis magni deserunt veritatis
+            assumenda sed culpa nam ducimus minima placeat sit enim nisi! Autem
+            nihil labore ipsa obcaecati eos, officiis debitis assumenda,
+            repellat nulla, numquam voluptatum inventore? Cum in nesciunt,
+            accusantium molestiae doloremque expedita!
+          </p>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
